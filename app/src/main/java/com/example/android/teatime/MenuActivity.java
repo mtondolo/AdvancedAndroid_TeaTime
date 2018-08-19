@@ -1,18 +1,18 @@
 /*
-* Copyright (C) 2017 The Android Open Source Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*  	http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package com.example.android.teatime;
 
@@ -33,7 +33,7 @@ import com.example.android.teatime.model.Tea;
 
 import java.util.ArrayList;
 
-public class MenuActivity extends AppCompatActivity implements ImageDownloader.DelayerCallback{
+public class MenuActivity extends AppCompatActivity implements ImageDownloader.DelayerCallback {
 
     Intent mTeaIntent;
 
@@ -69,7 +69,7 @@ public class MenuActivity extends AppCompatActivity implements ImageDownloader.D
 
     /**
      * We call ImageDownloader.downloadImage from onStart or onResume instead of in onCreate
-     * to ensure there is enougth time to register IdlingResource if the download is done
+     * to ensure there is enough time to register IdlingResource if the download is done
      * too early (i.e. in onCreate)
      */
     @Override
@@ -80,9 +80,6 @@ public class MenuActivity extends AppCompatActivity implements ImageDownloader.D
 
     @Override
     public void onDone(ArrayList<Tea> teas) {
-
-        //TextView testing =(TextView)findViewById(R.id.textView);
-        //testing.setText("Changed");
 
         // Create a {@link TeaAdapter}, whose data source is a list of {@link Tea}s.
         // The adapter know how to create grid items for each item in the list.

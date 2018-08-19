@@ -66,14 +66,13 @@ public class IdlingResourceMenuActivityTest {
 
     private IdlingResource mIdlingResource;
 
-    // the test is run.
+    // Registers any resource that needs to be synchronized with Espresso before the test is run.
     @Before
     public void registerIdlingResource() {
         mIdlingResource = mActivityTestRule.getActivity().getIdlingResource();
 
         // To prove that the test fails, omit this call:
         IdlingRegistry.getInstance().register(mIdlingResource);
-
     }
 
     @Test
@@ -81,6 +80,7 @@ public class IdlingResourceMenuActivityTest {
         onData(anything()).inAdapterView(withId(R.id.tea_grid_view)).atPosition(0).perform(click());
     }
 
+    // Remember to unregister resources when not needed to avoid malfunction.
     @After
     public void unregisterIdlingResource() {
         if (mIdlingResource != null) {
